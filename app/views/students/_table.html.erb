@@ -1,0 +1,34 @@
+<h1>Students</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Nick Name</th>
+      <th>Mother Name</th>
+      <th>Father Name</th>
+      <th>Address</th>
+      <th>Standard</th>
+      <th>Mentors</th>
+      <th>Principal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @collection.each do |student| %>
+      <tr>
+        <td><%= student.name.name %></td>
+        <td><%= student.name.nickname %></td>
+        <td><%= student.parent.mother_name %></td>
+        <td><%= student.parent.father_name %></td>
+        <td><%= student.address.address %></td>
+        <td><%= student.standard.standard %></td>
+        <td>
+          <%= list_of_subjects(student).map{ |sub| sub.subject_name }.join(',') %>
+        </td>
+        <td>
+          <%= student.mentors.map { |mentor| mentor.name }.join(', ') %>
+        </td>
+        <td><%= student.principal.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

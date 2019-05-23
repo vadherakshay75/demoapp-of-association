@@ -1,0 +1,12 @@
+completed:
+
+
+belongs_to
+has_one
+has_many
+has_many through
+
+pending:
+
+has_and_belongs_to_many
+has_one through
